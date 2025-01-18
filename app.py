@@ -50,7 +50,9 @@ if option == 'Carregar':
             model_path = "TucanoBR/ViTucano-1b5-v1"
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-            model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
+            #model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
+            model = AutoModel.from_pretrained("TucanoBR/ViTucano-1b5-v1", revision="main")
+
             
             model.to(device)
             tokenizer = AutoTokenizer.from_pretrained(model_path)
