@@ -10,6 +10,7 @@ import time
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
+st.write('Libs carregadas')
 
 @st.cache_resource
 def load_model():
