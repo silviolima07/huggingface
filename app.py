@@ -10,6 +10,8 @@ import time
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
+st.write("Libs imported")
+
 @st.cache_resource
 def load_model():
     model_path = "TucanoBR/ViTucano-1b5-v1"
