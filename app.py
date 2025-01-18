@@ -10,7 +10,6 @@ import time
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-st.write("Libs imported")
 
 @st.cache_resource
 def load_model():
@@ -52,9 +51,19 @@ if option == 'Carregar':
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
             model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
+            
             model.to(device)
             tokenizer = AutoTokenizer.from_pretrained(model_path)
-            st.write("Modelo carregado!")
+            
+            prompt = "Quais os principais elementos dessa imagem?"
+
+            # Caso você tenha uma imagem no seu ambiente local, basta passar o endereço da imagem
+            # (e.g., path/to/image.jpg).
+            image_file="https://raw.githubusercontent.com/Nkluge-correa/TinyLLaVA_Factory/refs/heads/main/assets/sample.jpg"
+            output_text, _ = model.chat(prompt=prompt, image=image_file, tokenizer=tokenizer)
+
+            # Imprima o output do modelo!
+            st.write(output_text)
         
         
     except:
