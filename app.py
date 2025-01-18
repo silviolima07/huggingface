@@ -54,7 +54,7 @@ if option == 'Carregar':
             #model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
             model = AutoModel.from_pretrained("TucanoBR/ViTucano-1b5-v1",trust_remote_code=True,  revision="main")
 
-            
+            st.write("Modelo carregado")
             model.to(device)
             tokenizer = AutoTokenizer.from_pretrained(model_path)
             
