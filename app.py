@@ -1,14 +1,11 @@
 import pandas as pd
 import streamlit as st
 #from crewai import Crew, Process
-#from my_agents import criar_agente_revisor
-#from my_tasks import criar_task_analise
 import os
 from PIL import Image
 import time
 
-from transformers import AutoModelForCausalLM
-from transformers import AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
 #from myutils import load_model
@@ -20,7 +17,7 @@ def load_model():
     model_path = "TucanoBR/ViTucano-1b5-v1"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    model = AutoModelForCausalLM.from_pretrained(model_path) #, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(model_path, revision="main") #, trust_remote_code=True)
     model.to(device)
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     return tokenizer, model
@@ -44,18 +41,17 @@ if option == 'Carregar':
         with st.spinner ('Wait for it...we are working...please') :
             #time.sleep(5)
             
-            tokenizer, model = load_model()
+            #tokenizer, model = load_model()
             # Testando o modelo
             #input_text = "Exemplo de entrada"
             #inputs = tokenizer(input_text, return_tensors="pt")
             #outputs = model.generate(**inputs)
             #st.write(tokenizer.decode(outputs[0], skip_special_tokens=True))
             
-            #model_path = "TucanoBR/ViTucano-1b5-v1"
-            #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            #st.write("Carregar modelo")
-            #model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
-            #model = AutoModel.from_pretrained("TucanoBR/ViTucano-1b5-v1",trust_remote_code=True,  revision="main")
+            model_path = "TucanoBR/ViTucano-1b5-v1"
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            st.write("Carregar modelo")
+            model  = AutoModelForCausalLM.from_pretrained(model_path,trust_remote_code=True,  revision="main")
 
             
             model.to(device)
