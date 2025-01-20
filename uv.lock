@@ -156,7 +156,6 @@ name = "huggingface"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "pillow" },
     { name = "streamlit" },
     { name = "torch" },
     { name = "torchaudio" },
@@ -166,7 +165,6 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "pillow", specifier = "==11.1.0" },
     { name = "streamlit", specifier = "==1.41.1" },
     { name = "torch", specifier = ">=2.5.1" },
     { name = "torchaudio", specifier = ">=2.5.1" },
