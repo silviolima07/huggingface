@@ -6,7 +6,7 @@ from PIL import Image
 import time
 
 st.write("Carregando..")
-st.write("- from transformers import AutoModelForCausalLM, AutoTokenizer"
+st.write("- from transformers import AutoModelForCausalLM, AutoTokenizer")
 st.write('- import torch')
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
