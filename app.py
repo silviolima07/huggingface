@@ -12,7 +12,8 @@ st.write("Carregando..")
 #import torch
 st.write("- from myutils import load_model")
 
-from myutils import load_model
+#from myutils import load_model
+import myutils
 
 st.write('Libs carregadas')
 
