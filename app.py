@@ -44,8 +44,9 @@ if option == 'Carregar':
     try:
         with st.spinner ('Wait for it...we are working...please') :
             #time.sleep(5)
-            
-            tokenizer, model = load_model()
+            st.write("Loading model")
+            #tokenizer, model = load_model()
+            load_model()
             # Testando o modelo
             #input_text = "Exemplo de entrada"
             #inputs = tokenizer(input_text, return_tensors="pt")
