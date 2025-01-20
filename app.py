@@ -6,10 +6,11 @@ from PIL import Image
 import time
 
 st.write("Carregando..")
-st.write("- from transformers import AutoModelForCausalLM, AutoTokenizer")
-st.write('- import torch')
+#st.write("- from transformers import AutoModelForCausalLM, AutoTokenizer")
+#st.write('- import torch')
 #from transformers import AutoModelForCausalLM, AutoTokenizer
 #import torch
+st.write("- from myutils import load_model")
 
 from myutils import load_model
 
