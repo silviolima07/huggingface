@@ -51,7 +51,7 @@ if option == 'Carregar':
             #inputs = tokenizer(input_text, return_tensors="pt")
             #outputs = model.generate(**inputs)
             #st.write(tokenizer.decode(outputs[0], skip_special_tokens=True))
-            
+            """
             #model_path = "TucanoBR/ViTucano-1b5-v1"
             #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             #st.write("Carregar modelo")
@@ -70,6 +70,7 @@ if option == 'Carregar':
 
             # Imprima o output do modelo!
             st.write(output_text)
+            """
         
         
     except:
