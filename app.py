@@ -7,20 +7,22 @@ import os
 from PIL import Image
 import time
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+#from transformers import AutoModelForCausalLM, AutoTokenizer
+#import torch
+
+from utils import load_model
 
 st.write('Libs carregadas')
 
-@st.cache_resource
-def load_model():
-    model_path = "TucanoBR/ViTucano-1b5-v1"
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    model = AutoModelForCausalLM.from_pretrained(model_path) #, trust_remote_code=True)
-    model.to(device)
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
-    return tokenizer, model
+#@st.cache_resource
+#def load_model():
+#    model_path = "TucanoBR/ViTucano-1b5-v1"
+#    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#
+#    model = AutoModelForCausalLM.from_pretrained(model_path) #, trust_remote_code=True)
+#    model.to(device)
+#    tokenizer = AutoTokenizer.from_pretrained(model_path)
+#    return tokenizer, model
 
 html_page_title = """
      <div style="background-color:black;padding=60px">
@@ -41,18 +43,18 @@ if option == 'Carregar':
         with st.spinner ('Wait for it...we are working...please') :
             #time.sleep(5)
             
-            #tokenizer, model = load_model()
+            tokenizer, model = load_model()
             # Testando o modelo
             #input_text = "Exemplo de entrada"
             #inputs = tokenizer(input_text, return_tensors="pt")
             #outputs = model.generate(**inputs)
             #st.write(tokenizer.decode(outputs[0], skip_special_tokens=True))
             
-            model_path = "TucanoBR/ViTucano-1b5-v1"
-            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            st.write("Carregar modelo")
+            #model_path = "TucanoBR/ViTucano-1b5-v1"
+            #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            #st.write("Carregar modelo")
             #model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
-            model = AutoModel.from_pretrained("TucanoBR/ViTucano-1b5-v1",trust_remote_code=True,  revision="main")
+            #model = AutoModel.from_pretrained("TucanoBR/ViTucano-1b5-v1",trust_remote_code=True,  revision="main")
 
             
             model.to(device)
